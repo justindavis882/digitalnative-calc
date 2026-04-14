@@ -1,0 +1,125 @@
+:root {
+  --bg-color: #121212;
+  --container-bg: #1e1e1e;
+  --display-bg: #2a2a2a;
+  --text-main: #ffffff;
+  --text-muted: #a0a0a0;
+  --btn-num: #333333;
+  --btn-op: #ff9800;
+  --btn-sci: #444444;
+  --btn-clear: #f44336;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  font-family: system-ui, -apple-system, sans-serif;
+  user-select: none; /* Prevents text highlighting while tapping */
+}
+
+.app-container {
+  width: 100%;
+  max-width: 480px;
+  aspect-ratio: 3 / 4;
+  background-color: var(--container-bg);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+}
+
+/* Splash Screen overlay */
+.splash {
+  position: absolute;
+  inset: 0;
+  background-color: var(--bg-color);
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-main);
+  transition: opacity 0.3s ease;
+}
+
+.splash.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* Header & Display */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.display-container {
+  flex: 1; /* Takes up remaining top space */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding: 20px;
+  background-color: var(--display-bg);
+}
+
+.history {
+  color: var(--text-muted);
+  font-size: 1.2rem;
+  min-height: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.display {
+  color: var(--text-main);
+  font-size: 3.5rem;
+  font-weight: 300;
+  word-break: break-all;
+}
+
+/* Keypad Grid */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px; /* Thin lines between buttons */
+  background-color: #000; /* Acts as the border color between gaps */
+  height: 60%; /* Locks keypad to bottom 60% of screen */
+}
+
+.btn {
+  border: none;
+  font-size: 1.5rem;
+  color: var(--text-main);
+  cursor: pointer;
+  touch-action: manipulation; /* Removes 300ms tap delay */
+  transition: filter 0.1s;
+}
+
+.btn:active {
+  filter: brightness(1.5);
+}
+
+.num-btn { background-color: var(--btn-num); }
+.op-btn { background-color: var(--btn-op); font-size: 1.8rem; }
+.sci-btn { background-color: var(--btn-sci); font-size: 1.2rem; }
+.clear-btn { background-color: var(--btn-clear); }
+.equal-btn { background-color: var(--btn-op); }
+
+.zero {
+  grid-column: span 2;
+  text-align: left;
+  padding-left: 20px;
+}
