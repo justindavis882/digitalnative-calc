@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Digital Native Calc</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div id="splash-screen" class="splash hidden">
+    <div class="logo">Digital Native</div>
+  </div>
+
+  <main class="app-container" id="app-content">
+    
+    <header class="app-header">
+      <span class="brand-small" id="about-trigger">DN</span>
+      <span class="mode-indicator">DEG</span>
+    </header>
+
+    <div class="display-container">
+      <div class="history" id="history"></div>
+      <div class="display" id="display">0</div>
+    </div>
+
+    <div class="keypad">
+      <button class="btn sci-btn" data-action="sin">sin</button>
+      <button class="btn sci-btn" data-action="cos">cos</button>
+      <button class="btn sci-btn" data-action="tan">tan</button>
+      <button class="btn sci-btn" data-action="pow">x²</button>
+      
+      <button class="btn clear-btn" data-action="clear">AC</button>
+      <button class="btn op-btn" data-action="delete">DEL</button>
+      <button class="btn op-btn" data-action="percent">%</button>
+      <button class="btn op-btn" data-action="divide">÷</button>
+      
+      <button class="btn num-btn" data-value="7">7</button>
+      <button class="btn num-btn" data-value="8">8</button>
+      <button class="btn num-btn" data-value="9">9</button>
+      <button class="btn op-btn" data-action="multiply">×</button>
+      
+      <button class="btn num-btn" data-value="4">4</button>
+      <button class="btn num-btn" data-value="5">5</button>
+      <button class="btn num-btn" data-value="6">6</button>
+      <button class="btn op-btn" data-action="subtract">−</button>
+      
+      <button class="btn num-btn" data-value="1">1</button>
+      <button class="btn num-btn" data-value="2">2</button>
+      <button class="btn num-btn" data-value="3">3</button>
+      <button class="btn op-btn" data-action="add">+</button>
+      
+      <button class="btn num-btn zero" data-value="0">0</button>
+      <button class="btn num-btn" data-value=".">.</button>
+      <button class="btn equal-btn" data-action="calculate">=</button>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
