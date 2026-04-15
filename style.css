@@ -94,9 +94,26 @@ body {
 .keypad {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2px; /* Thin lines between buttons */
-  background-color: #000; /* Acts as the border color between gaps */
-  height: 60%; /* Locks keypad to bottom 60% of screen */
+  gap: 2px; 
+  background-color: #000; 
+  height: 65%; 
+}
+
+/* Style for the interactive DEG/RAD toggle */
+.mode-toggle {
+  background: transparent;
+  border: 1px solid var(--text-muted);
+  color: var(--text-muted);
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mode-toggle:active {
+  background: var(--text-muted);
+  color: var(--bg-color);
 }
 
 .btn {
