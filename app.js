@@ -24,53 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
     isDegrees = !isDegrees;
     angleModeBtn.innerText = isDegrees ? 'DEG' : 'RAD';
   });
-
-  const handleScientific = (action) => {
-    // If user presses Pi, we inject it directly
-    if (action === 'pi') {
-      currentInput = Math.PI.toFixed(6).replace(/\.?0+$/, '');
-      updateDisplay();
-      return;
-    }
-
-    const current = parseFloat(currentInput);
-    if (isNaN(current)) return;
-
-    // Convert to radians if needed for trig functions
-    let angle = isDegrees ? current * (Math.PI / 180) : current;
-
-    switch (action) {
-      // Trigonometry
-      case 'sin': currentInput = Math.sin(angle).toFixed(6).replace(/\.?0+$/, ''); break;
-      case 'cos': currentInput = Math.cos(angle).toFixed(6).replace(/\.?0+$/, ''); break;
-      case 'tan': 
-        // Handle undefined tangent at 90 / 270 degrees
-        if (isDegrees && (current % 180 === 90 || current % 180 === -90)) {
-            currentInput = 'Error';
-        } else {
-            currentInput = Math.tan(angle).toFixed(6).replace(/\.?0+$/, ''); 
-        }
-        break;
-      
-      // Advanced Math
-      case 'pow': currentInput = Math.pow(current, 2).toString(); break;
-      case 'sqrt': 
-        if (current < 0) currentInput = 'Error'; // No imaginary numbers for now
-        else currentInput = Math.sqrt(current).toFixed(6).replace(/\.?0+$/, ''); 
-        break;
-      case 'log': 
-        if (current <= 0) currentInput = 'Error';
-        else currentInput = Math.log10(current).toFixed(6).replace(/\.?0+$/, ''); 
-        break;
-      case 'ln': 
-        if (current <= 0) currentInput = 'Error';
-        else currentInput = Math.log(current).toFixed(6).replace(/\.?0+$/, ''); 
-        break;
-    }
-    updateDisplay();
-  };
   
-
   const updateDisplay = () => {
     display.innerText = currentInput;
     if (operation != null) {
@@ -119,14 +73,46 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const handleScientific = (action) => {
+    // If user presses Pi, we inject it directly
+    if (action === 'pi') {
+      currentInput = Math.PI.toFixed(6).replace(/\.?0+$/, '');
+      updateDisplay();
+      return;
+    }
+
     const current = parseFloat(currentInput);
     if (isNaN(current)) return;
 
+    // Convert to radians if needed for trig functions
+    let angle = isDegrees ? current * (Math.PI / 180) : current;
+
     switch (action) {
-      case 'sin': currentInput = Math.sin(current * Math.PI / 180).toFixed(6).replace(/\.?0+$/, ''); break; // Assuming Degrees
-      case 'cos': currentInput = Math.cos(current * Math.PI / 180).toFixed(6).replace(/\.?0+$/, ''); break;
-      case 'tan': currentInput = Math.tan(current * Math.PI / 180).toFixed(6).replace(/\.?0+$/, ''); break;
+      // Trigonometry
+      case 'sin': currentInput = Math.sin(angle).toFixed(6).replace(/\.?0+$/, ''); break;
+      case 'cos': currentInput = Math.cos(angle).toFixed(6).replace(/\.?0+$/, ''); break;
+      case 'tan': 
+        // Handle undefined tangent at 90 / 270 degrees
+        if (isDegrees && (current % 180 === 90 || current % 180 === -90)) {
+            currentInput = 'Error';
+        } else {
+            currentInput = Math.tan(angle).toFixed(6).replace(/\.?0+$/, ''); 
+        }
+        break;
+      
+      // Advanced Math
       case 'pow': currentInput = Math.pow(current, 2).toString(); break;
+      case 'sqrt': 
+        if (current < 0) currentInput = 'Error'; // No imaginary numbers for now
+        else currentInput = Math.sqrt(current).toFixed(6).replace(/\.?0+$/, ''); 
+        break;
+      case 'log': 
+        if (current <= 0) currentInput = 'Error';
+        else currentInput = Math.log10(current).toFixed(6).replace(/\.?0+$/, ''); 
+        break;
+      case 'ln': 
+        if (current <= 0) currentInput = 'Error';
+        else currentInput = Math.log(current).toFixed(6).replace(/\.?0+$/, ''); 
+        break;
     }
     updateDisplay();
   };
