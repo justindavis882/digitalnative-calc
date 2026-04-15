@@ -11,13 +11,13 @@ Standard Android calculator applications are often unreadable or cut off when si
 
 The Digital Native Calc is built with a strictly locked viewport and responsive CSS Grid architecture to ensure every button is highly legible, accessible, and perfectly scaled for small touchscreens. 
 
-## ✨ Features
+## Features
 - **Perfect Fit:** Locked 3:4 aspect ratio with CSS `max-width` scaling. Fits the Sidephone perfectly, but acts as a sleek widget on desktop browsers.
 - **Fat-Finger Optimized:** Large touch targets with `touch-action: manipulation` to eliminate the default 300ms mobile tap delay.
 - **Scientific Functions:** Essential math operations plus basic trig (`sin`, `cos`, `tan`) and exponents (`x²`).
 - **Zero Distractions:** Pure vanilla HTML/CSS/JS. No heavy frameworks, no ads, no trackers.
 
-## 🚀 Live Demo & Installation
+## Live Demo & Installation
 You can use the calculator directly in your browser:
 **[Launch Digital Native Calc](https://justindavis882.github.io/sidephone-calc/)** 
 
@@ -26,12 +26,12 @@ You can use the calculator directly in your browser:
 2. Open the browser menu and select **"Add to Home screen"** or **"Install App"**.
 3. Launch directly from your home screen for a fullscreen, native app experience!
 
-## 🛠️ Local Development
+## Local Development
 Since this is a vanilla stack, no build tools are required. 
 1. Clone the repository: `git clone https://github.com/justindavis882/sidephone-calc.git`
 2. Open `index.html` in your browser.
 
-## 🌐 About Digital Native
+## About Digital Native
 This application is part of the **Digital Native** suite of tools—focused on building clean, responsive, and functional digital environments. 
 
 Check out more of our apps, projects, and custom web tools here:
