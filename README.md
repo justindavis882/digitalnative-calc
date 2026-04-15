@@ -19,7 +19,7 @@ The Digital Native Calc is built with a strictly locked viewport and responsive 
 
 ## 🚀 Live Demo & Installation
 You can use the calculator directly in your browser:
-**[Launch Digital Native Calc](https://justindavis882.github.io/sidephone-calc)** *(Update this link to your actual GitHub Pages URL)*
+**[Launch Digital Native Calc](https://justindavis882.github.io/sidephone-calc/)** 
 
 **To install on a Sidephone:**
 1. Open the Live Demo link in your Sidephone's web browser (e.g., Vivaldi or Firefox).
@@ -35,7 +35,7 @@ Since this is a vanilla stack, no build tools are required.
 This application is part of the **Digital Native** suite of tools—focused on building clean, responsive, and functional digital environments. 
 
 Check out more of our apps, projects, and custom web tools here:
-**[Digital Native Website](https://github.com/justindavis882/DigitalNative)**
+**[Digital Native Website](https://justindavis882.github.io/DigitalNative)**
 
 ---
 *Built for the minimalist tech community. If you find this helpful, consider checking out the main site and supporting the project!*
